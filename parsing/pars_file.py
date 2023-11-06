@@ -4,6 +4,7 @@ import os
 import sqlite3
 
 class ParsClass:
+
     def __init__(self, url, page):
         lst_with_urls = self.func_get_urls(url, page)
         for url_to_product in lst_with_urls:
