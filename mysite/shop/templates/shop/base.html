@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../../static/css/base.css">
+</head>
+<body>
+<header>
+<div class="header-content">
+    <div class="button-container">
+        {% if user.is_authenticated %}
+            <a class="button_title" href="{% url 'shop:main_page' %}">Перейти на главную</a>
+            <a class="button_title" href="#">Моя корзина</a>
+            <a class="button_title" href="{% url 'shop:profile' %}">Мой профиль</a>
+        {% else %}
+            <a class="button_title" href="{% url 'shop:main_page' %}">Перейти на главную</a>
+            <a class="button_title" href="{% url 'shop:login' %}">Войти в профиль</a>
+            <a class="button_title" href="{% url 'shop:registration' %}">Регистрация пользователя</a>
+        {% endif %}
+    </div>
+</div>
+
+        <div class="hand">
+            <span class="finger thumb"></span>
+            <span class="finger"></span>
+            <span class="finger"></span>
+            <span class="finger"></span>
+            <span class="finger"></span>
+            <span class="palm"></span>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="left-column">
+        <div class="image-container">
+            <img src="../../static/pic/picture.jpg" alt="Фотография"
+                 class="profile-image-small">
+        </div>
+        <p>
+            <a class="button" href="{% url 'shop:product_category_page' 'headphones' %}">Наушники</a><br>
+            <a class="button" href="{% url 'shop:product_category_page' 'keybord' %}">Клавиатуры</a><br>
+            <a class="button" href="{% url 'shop:product_category_page' 'micro' %}">Микрофоны</a><br>
+            <a class="button" href="{% url 'shop:product_category_page' 'mouse' %}">Мышки</a><br>
+            <a class="button" href="{% url 'shop:product_category_page' 'ps' %}">PS</a><br>
+            <a class="button" href="{% url 'shop:product_category_page' 'seats' %}">Игровые кресла</a><br>
+            <a class="button" href="{% url 'shop:product_category_page' 'spekers' %}">Колонки</a><br>
+            <a class="button" href="{% url 'shop:product_category_page' 'xbox' %}">XBOX</a><br>
+            <a class="button" href="{% url 'shop:product_category_page' 'table' %}">Игровые столы</a><br>
+            <br>
+            <br>
+            <br>
+        </p>
+    </div>
+    <div class="separator"></div>
+    <div class="right-column">
+        {% block right %}
+        {% endblock %}
+    </div>
+</div>
+
+<footer>
+    <div>
+        <p class="text_title_2">
+            © 2022–2023 Компания {{ название }}.<br>
+            Администрация Сайта не несет ответственности за размещаемые<br>
+            Пользователями материалы (в т.ч. информацию и изображения), их содержание и качество.
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>

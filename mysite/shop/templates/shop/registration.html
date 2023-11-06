@@ -1,0 +1,19 @@
+{% extends "shop/base.html" %}
+
+{% block title %}
+    Регистрация пользователя
+{% endblock %}
+
+{% block body %}
+    {% block right %}
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+        <h2>Регистрация</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+    {% endblock %}
+
+{% endblock %}

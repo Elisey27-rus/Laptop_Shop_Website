@@ -1,0 +1,19 @@
+{% extends "shop/base.html" %}
+
+{% block title %}
+    Профиль пользователя
+{% endblock %}
+
+{% block body %}
+    {% block right %}
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/profile-form.css' %}">
+        <h2>Введите информацию о пользователе</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Сохранить</button>
+        </form>
+    {% endblock %}
+
+{% endblock %}

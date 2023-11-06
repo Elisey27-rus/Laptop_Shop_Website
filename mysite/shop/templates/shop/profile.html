@@ -1,0 +1,42 @@
+{% extends "shop/base.html" %}
+
+{% block title %}
+    Профиль пользователя
+{% endblock %}
+
+{% block body %}
+    {% block right %}
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+        {% if user.is_authenticated %}
+            {% if user_profile %}
+                <h2>Информация о пользователе</h2>
+                <div class="product-image-container">
+                    {% if user_profile.photo %}
+                        <img class="product-image-round" src="
+                        {% if user_profile.photo %}{{ user_profile.photo.url }}{% else %}{% static 'img/default-profile-image.jpg' %}{% endif %}"
+                             alt="Изображение профиля пользователя">
+                    {% else %}
+                        Фото отсутствует
+                    {% endif %}
+                </div>
+                <div class="all-info">
+                <p>Имя: {{ user_profile.name }}</p>
+                <p>Фамилия: {{ user_profile.last_name }}</p>
+                <p>Дата рождения: {{ user_profile.birthday }}</p>
+                <p>Пол: {{ user_profile.get_gender_display }}</p>
+                <p>Город: {{ user_profile.city }}</p>
+                <p>Почта: {{ user_profile.email }}</p>
+                <p>Номер сотового телефона: {{ user_profile.phone_number }}</p>
+            {% else %}
+                <p>Нет информации о пользователе.</p>
+            {% endif %}
+        </div>
+        {% else %}
+            <p>Пожалуйста, войдите в систему, чтобы просматривать информацию о пользователе.</p>
+        {% endif %}
+        <a class="but" href="{% url 'shop:create_profile' %}">Редактирование профиля</a>
+        <br>
+        <a class="but" href="{% url 'shop:logout' %}">Выйти из профиля</a>
+    {% endblock %}
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "shop/base.html" %}
+
+{% block title %}
+    Мышки
+{% endblock %}
+
+{% load static %}
+
+{% block body %}
+
+    {% block right %}
+        {% for product in products_page %}
+            <link rel="stylesheet" href="{% static 'css/category_page.css' %}">
+            <li class="product-block">
+                <img class="product-image" src="{{ product.product_image.url }}" alt="Product Image">
+                <div class="product-info">
+                    <p class="name">
+                        <a href="{% url "shop:product_details" pk=product.pk %}">
+                            Имя: {{ product.product_name }}
+                        </a>
+                    </p>
+                    <p class="product-category">Категория: {{ product.product_category }}</p>
+                    {% if product.product_description %}
+                        <p class="product-description">{{ product.product_description }}</p>
+                    {% else %}
+                        <p class="product-description">Описание отсутствует, но оно скоро появится.</p>
+                    {% endif %}
+                    <p class="product-price">Цена: {{ product.product_price }}</p>
+                </div>
+            </li>
+            <hr class="hr-line">
+        {% empty %}
+            <h2>Sorry, no products yet...</h2>
+        {% endfor %}
+        <div class="pagination">
+            <span class="step-links">
+                {% if products_page.has_previous %}
+                    <a href="?page={{ products_page.previous_page_number }}">назад</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ products_page.number }} of {{ products_page.paginator.num_pages }}.
+                </span>
+
+                {% if products_page.has_next %}
+                    <a href="?page={{ products_page.next_page_number }}">вперед</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endblock %}
+
+{% endblock %}

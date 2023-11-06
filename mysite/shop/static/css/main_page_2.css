@@ -1,0 +1,102 @@
+.product-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-block {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #333; /* Цвет текста товара */
+}
+
+.product-image {
+  width: 300px;
+  height: 200px;
+  margin-right: 10px;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.product-category,
+.product-description,
+.product-price {
+  font-size: 16px;
+  margin: 5px 0;
+  color: #666; /* Цвет описания, категории и цены */
+}
+
+.hr-line {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Стили для кнопки "Имя продукта" */
+.product-name a {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #ff9900; /* Цвет кнопки */
+  color: #ffffff; /* Цвет текста кнопки */
+  border: none;
+  border-radius: 50px;
+  font-size: 18px; /* Увеличиваем размер шрифта */
+  font-family: "Arial", sans-serif; /* Изменяем шрифт текста */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-name a:hover {
+  background-color: #e64d00; /* Цвет кнопки при наведении */
+}
+
+/* Стили для блока пагинации */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Стили для ссылок назад и вперед */
+.pagination a {
+  padding: 8px 15px;
+  margin: 5px;
+  border: 1px solid #ddd;
+  text-decoration: none;
+  color: #333;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+.pagination a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Стили для текущей страницы */
+.pagination .current {
+  display: inline-block;
+  padding: 8px 15px;
+  margin: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 16px;
+}

@@ -1,0 +1,64 @@
+/* registration.css */
+
+/* Применение стилей к заголовку */
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #eaeaea;
+    margin-left: 100px;
+}
+
+/* Общие стили для формы и контейнера */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для полей ввода */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+/* Стили для кнопки регистрации */
+form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Стили для блока справа (правый блок) */
+.right {
+    float: right;
+    width: calc(100% - 440px);
+}
+
+/* Очистка после плавающих элементов */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}

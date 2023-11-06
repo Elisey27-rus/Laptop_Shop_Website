@@ -1,0 +1,112 @@
+/* Reset default list styles and margins for the product list */
+.product-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style for each product block */
+.product-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Style for the product image */
+.product-image {
+    width: 400px;
+    height: 300px;
+    margin-right: 10px;
+}
+
+/* Style for the product information container */
+.product-info {
+    flex: 1;
+    text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Стили для кнопки "Имя продукта" */
+.name a {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #ff9900; /* Цвет кнопки */
+  color: #ffffff; /* Цвет текста кнопки */
+  border: none;
+  border-radius: 50px;
+  font-size: 18px; /* Увеличиваем размер шрифта */
+  font-family: "Arial", sans-serif; /* Изменяем шрифт текста */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.name a:hover {
+  background-color: #e64d00; /* Цвет кнопки при наведении */
+}
+
+/* Style for other product information (category, description, price) */
+.product-category,
+.product-description,
+.product-price {
+    font-size: 14px;
+    margin: 5px 0;
+    text-align: center;
+}
+
+/* Style for the horizontal line between products */
+.hr-line {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+/* Style for the "Sorry, no products yet..." message */
+h2 {
+    text-align: center;
+    color: #ff9900;
+}
+
+/* Style for the pagination container */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Style for pagination links */
+.pagination a {
+    padding: 8px 15px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #333;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+/* Hover style for pagination links */
+.pagination a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Style for the current page indicator */
+.pagination .current {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 16px;
+}

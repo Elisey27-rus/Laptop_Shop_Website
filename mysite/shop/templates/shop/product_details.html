@@ -1,0 +1,39 @@
+{% extends "shop/base.html" %}
+
+{% block title %}
+    Продукт: {{ product.name }}
+{% endblock %}
+
+{% load static %}
+
+{% block right %}
+    <link rel="stylesheet" href="{% static 'css/product_details.css' %}">
+    <div class="product-container">
+        <div class="product-image-container">
+            <img class="product-image" src="{{ product.product_image.url }}" alt="Product Image">
+        </div>
+        <div class="product-info-container">
+            <p class="product-name">Имя: {{ product.product_name }}</p>
+            {% if product.product_description %}
+                <p class="product-description">{{ product.product_description }}</p>
+            {% else %}
+                <p class="product-description">Описание отсутствует, но оно скоро появится.</p>
+            {% endif %}
+            {% if product.product_discount %}
+                <p class="product-description">{{ product.product_discount }}</p>
+            {% else %}
+                <p class="product-description">Нет скидки</p>
+            {% endif %}
+            <p class="product-price">Цена товара: {{ product.product_price }}</p>
+            <form id="add-to-cart-form" method="post">
+                {% csrf_token %}
+                <input type="number" name="quantity" value="1" min="1">
+                <button type="submit">Добавить в корзину</button>
+            </form>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+{% endblock %}

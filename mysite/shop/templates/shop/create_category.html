@@ -1,0 +1,19 @@
+{% extends "shop/base.html"%}
+
+{% block title %}
+    Создание категории товара
+{% endblock %}
+{% load static %}
+{% block body %}
+    <link rel="stylesheet" href='../../static/css/create_category.css'>
+    <h1>Создание категории товара</h1>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">
+                Создать категорию
+            </button>
+        </form>
+    </div>
+{% endblock %}
