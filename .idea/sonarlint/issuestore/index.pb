@@ -235,8 +235,6 @@ O
 mysite/manage.py,3/a/3aaaf8659cf4a6583450dd9b020999233ed4bcc2
 \
 ,.idea/inspectionProfiles/Project_Default.xml,4/9/496a238a6afa168dbaf6efd37bb459331589579c
-9
-	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 G
 mysite/requirements.txt,b/9/b9c3100530857a67ad1c125fd60b59fc572c73dd
 a
